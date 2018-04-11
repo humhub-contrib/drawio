@@ -8,5 +8,5 @@ return array (
   'File write access denied!' => 'Accès en écriture refusé.',
   'Hostname' => 'Nom de l\'hôte',
   'Open the new document in the next step' => 'Ouvrir le nouveau document dans la prochaine étape',
-  'e.g. https://draw.io' => 'p.ex. : https://draw.io',
+  'e.g. https://draw.io' => 'p.ex. https://draw.io',
 );
