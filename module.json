@@ -3,7 +3,7 @@
     "name": "draw.io - Diagrams",
     "description": "Create or edit diagrams using draw.io editor.",
     "keywords": [],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "humhub": {
         "minVersion": "1.2"
     },
