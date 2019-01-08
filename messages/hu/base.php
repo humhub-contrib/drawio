@@ -7,6 +7,6 @@ return array (
   'Edit using draw.io' => 'Szerkesztés draw.io-val.',
   'File write access denied!' => 'A fájl írása megtagadva!',
   'Hostname' => 'Hosztnév',
-  'Open the new document in the next step' => 'Nyissa meg az új dokumentumot, következő lépésként',
+  'Open the new document in the next step' => 'Nyissa meg az új dokumentumot következő lépésként',
   'e.g. https://draw.io' => 'pl. https://draw.io',
 );
