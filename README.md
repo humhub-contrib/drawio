@@ -1,17 +1,9 @@
-draw.io - Diagrams
-==================
+# draw.io - Diagrams
 
-## Description
+Create charts in the easiest way imaginable. With our draw.io integration it has never been easier to create, edit and share diagrams. Dozens of templates are waiting for your ideas. 
 
-Create or edit diagrams using the draw.io editor integration.
+# Overview
 
-__Module website:__ <https://github.com/humhub/humhub-modules-drawio>    
-__Author:__ humhub
-
-## Changelog
-
-<https://github.com/humhub/humhub-modules-drawio/commits/master>
-
-## Bugtracker
-
-<https://github.com/humhub/humhub-modules-drawio/issues>
+- Create, edit and share diagrams with the well renowned tool
+- Increase your productivity by collaboratively designing projects
+- Comment, discuss and show your appreciaten with a like
