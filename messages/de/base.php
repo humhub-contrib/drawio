@@ -7,6 +7,6 @@ return array (
   'Edit using draw.io' => 'Mit Draw.io bearbeiten',
   'File write access denied!' => 'Datei-Schreibzugriff verweigert!',
   'Hostname' => 'Host-Name',
-  'Open the new document in the next step' => 'Öffnen Sie das neue Dokument im nächsten Schritt',
+  'Open the new document in the next step' => 'Öffne das neue Dokument im nächsten Schritt',
   'e.g. https://draw.io' => 'z. B. https://draw.io',
 );
