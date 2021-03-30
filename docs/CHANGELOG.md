@@ -1,5 +1,11 @@
 Changelog
 =========
+
+1.0.3 - Unreleased
+---------------------
+- Fix #8: Support nonce for script
+
+
 1.0.2 - June 27, 2019
 ---------------------
 - Enh: Updated translations
