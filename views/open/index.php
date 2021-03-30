@@ -7,7 +7,7 @@
         ?>
     </div>
 </div>
-<script>
+<script <?= \humhub\libs\Html::nonce() ?>>
     window.onload = function (evt) {
         setSize();
     }
