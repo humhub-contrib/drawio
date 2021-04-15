@@ -35,7 +35,7 @@ class Module extends \humhub\components\Module
     {
         $url = $this->settings->get('serverUrl');
         if (empty($url)) {
-            return 'https://draw.io';
+            return 'https://embed.diagrams.net';
         }
 
         return $url;
