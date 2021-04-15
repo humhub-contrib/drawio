@@ -39,7 +39,7 @@ class ConfigureForm extends \yii\base\Model
     public function attributeHints()
     {
         return [
-            'serverUrl' => Yii::t('DrawioModule.base', 'e.g. https://draw.io'),
+            'serverUrl' => Yii::t('DrawioModule.base', 'e.g. :drawioDefaultServerUrl', [':drawioDefaultServer' => 'https://embed.diagrams.net']),
         ];
     }
 
