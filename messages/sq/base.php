@@ -9,5 +9,5 @@ return [
     'File write access denied!' => '',
     'Hostname' => '',
     'Open the new document in the next step' => '',
-    'e.g. https://draw.io' => '',
+    'e.g. :drawioDefaultServerUrl' => '',
 ];
