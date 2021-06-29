@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.4 - Unreleased
+----------------------
+- Fix #10: Fix setting hint
+
 1.0.3 - April 15, 2021
 ----------------------
 - Fix #8: Support nonce for script
