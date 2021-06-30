@@ -4,6 +4,7 @@ Changelog
 1.0.4 - Unreleased
 ----------------------
 - Fix #10: Fix setting hint
+- Fix #12: Fix file size
 
 1.0.3 - April 15, 2021
 ----------------------
