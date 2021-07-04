@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.4 - July 30, 2021
+1.0.4 - June 30, 2021
 ----------------------
 - Fix #10: Fix setting hint
 - Fix #12: Fix file size
