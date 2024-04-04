@@ -6,7 +6,7 @@ return array (
   'Create draw.io document' => '',
   'Edit using draw.io' => '',
   'File write access denied!' => '',
-  'Hostname' => '',
+  'Hostname' => 'Hostname',
   'Open the new document in the next step' => '',
   'e.g. :drawioDefaultServerUrl' => '',
 );
