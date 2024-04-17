@@ -1,11 +1,9 @@
 humhub.module('drawio', function (module, require, $) {
-
     var client = require('client');
     var modal = require('ui.modal');
     var object = require('util').object;
     var Widget = require('ui.widget').Widget;
     var event = require('event');
-    var loader = require('ui.loader');
 
     var Editor = function (node, options) {
         Widget.call(this, node, options);
@@ -29,10 +27,7 @@ humhub.module('drawio', function (module, require, $) {
     };
 
     Editor.prototype.close = function (evt) {
-        var that = this;
-
-        // if save trigger modifed event, when file changed
-
+        // if save trigger modified event, when file changed
         this.modal.clear();
         this.modal.close();
 
@@ -44,9 +39,23 @@ humhub.module('drawio', function (module, require, $) {
     Editor.prototype.initEditor = function () {
         var that = this;
 
-        $(window).on("message", function (e) {
-            // ToDo: Check message origin
-            editWindow = $('#drawIOFrame')[0].contentWindow;
+        if (typeof drawioEditorFileGuids === 'undefined') {
+            drawioEditorFileGuids = [];
+        }
+        if (drawioEditorFileGuids.indexOf(that.options.fileGuid) !== -1) {
+            // Don't initialize it twice
+            return;
+        }
+        drawioEditorFileGuids.push(that.options.fileGuid);
+
+        $(window).on('message', function (e) {
+            var currentEditor = $('[data-ui-widget="drawio.Editor"]');
+            if (currentEditor && currentEditor.data('file-guid') !== that.options.fileGuid) {
+                // Skip event from editor of another file
+                return;
+            }
+
+            var editWindow = $('#drawIOFrame')[0].contentWindow;
             var data = JSON.parse(e.originalEvent.data);
             if (data.event === 'init') {
                 if (that.options.fileContent != '') {
@@ -68,15 +77,9 @@ humhub.module('drawio', function (module, require, $) {
                     type: 'POST',
                     data: {'content': data.xml},
                     dataType: 'json',
-                    success: function (json) {
-                        console.log("saved");
-                    }
                 });
             } else if (data.event === 'exit') {
                 that.close();
-            } else {
-                console.log("Not handled event type:" + data.event);
-                console.log(data);
             }
         });
     }
