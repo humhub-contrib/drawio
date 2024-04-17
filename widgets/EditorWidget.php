@@ -8,12 +8,12 @@
 
 namespace humhub\modules\drawio\widgets;
 
-use Yii;
-use humhub\modules\file\models\File;
-use yii\helpers\Url;
 use humhub\libs\Html;
 use humhub\modules\file\libs\FileHelper;
+use humhub\modules\file\models\File;
 use humhub\widgets\JsWidget;
+use Yii;
+use yii\helpers\Url;
 
 /**
  * Description of EditorWidget
@@ -41,19 +41,12 @@ class EditorWidget extends JsWidget
     /**
      * @inheritdoc
      */
-    public function init()
-    {
-        parent::init();
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function getData()
     {
         $user = Yii::$app->user->getIdentity();
 
         return [
+            'file-guid' => $this->file->guid,
             'file-name' => Html::encode($this->file->fileName),
             'file-extension' => Html::encode(strtolower(FileHelper::getExtension($this->file))),
             'file-content' => file_get_contents($this->file->store->get()),

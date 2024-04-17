@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.5 - Unreleased
+----------------------
+- Fix #7: Fix overwriting files after opening the editor for another file
+
 1.0.4 - June 30, 2021
 ----------------------
 - Fix #10: Fix setting hint
@@ -21,5 +25,3 @@ Changelog
 1.0.1 - July 2, 2018
 ---------------------
 - Fix: PHP 7.2 compatibility issues
-
-

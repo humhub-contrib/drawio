@@ -8,30 +8,30 @@
 
 namespace humhub\modules\drawio\assets;
 
-use Yii;
 use yii\web\AssetBundle;
+use yii\web\View;
 
 class Assets extends AssetBundle
 {
+    /**
+     * @inheritdoc
+     */
+    public $sourcePath = '@drawio/resources';
 
+    /**
+     * @inheritdoc
+     */
+    public $js = ['humhub.drawio.js'];
+
+    /**
+     * @inheritdoc
+     */
+    public $jsOptions = ['position' => View::POS_BEGIN];
+
+    /**
+     * @inheritdoc
+     */
     public $publishOptions = [
-        'forceCopy' => true
+        'forceCopy' => false
     ];
-    public $css = [];
-    public $jsOptions = [
-        'position' => \yii\web\View::POS_BEGIN
-    ];
-
-    public function init()
-    {
-
-        $this->js = [
-            'humhub.drawio.js'
-        ];
-
-
-        $this->sourcePath = dirname(__FILE__) . '/../resources';
-        parent::init();
-    }
-
 }
