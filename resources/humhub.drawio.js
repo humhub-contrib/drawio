@@ -49,8 +49,7 @@ humhub.module('drawio', function (module, require, $) {
         drawioEditorFileGuids.push(that.options.fileGuid);
 
         $(window).on('message', function (e) {
-            var currentEditor = $('[data-ui-widget="drawio.Editor"]');
-            if (currentEditor && currentEditor.data('file-guid') !== that.options.fileGuid) {
+            if ($('[data-ui-widget="drawio.Editor"]').data('file-guid') !== that.options.fileGuid) {
                 // Skip event from editor of another file
                 return;
             }
