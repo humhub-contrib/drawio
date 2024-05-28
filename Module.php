@@ -8,7 +8,6 @@
 
 namespace humhub\modules\drawio;
 
-use Yii;
 use yii\helpers\Url;
 
 /**
@@ -18,16 +17,13 @@ use yii\helpers\Url;
  */
 class Module extends \humhub\components\Module
 {
-
-    public $resourcesPath = 'resources';
-
     /**
      * @inheritdoc
      */
     public function getConfigUrl()
     {
         return Url::to([
-                    '/drawio/admin'
+            '/drawio/admin',
         ]);
     }
 

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.0 - Unreleased
+----------------------
+- Fix #17: Update module resources path
+
 1.0.5 - April 4, 2024
 ----------------------
 - Fix #7: Fix overwriting files after opening the editor for another file
