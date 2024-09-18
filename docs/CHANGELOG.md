@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0.6 - Unreleased
+----------------------
+- Enh #18: Update Active Form for Bootstrap 5
+
 1.0.5 - April 4, 2024
 ----------------------
 - Fix #7: Fix overwriting files after opening the editor for another file
