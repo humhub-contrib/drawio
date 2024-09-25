@@ -1,15 +1,15 @@
 <?php
 
-use humhub\modules\drawio\Module;
-use yii\helpers\Url;
-use humhub\widgets\ActiveForm;
+use humhub\modules\drawio\assets\Assets;
+use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\libs\Html;
+use humhub\widgets\ModalDialog;
 
-\humhub\modules\drawio\assets\Assets::register($this);
+Assets::register($this);
 
-$modal = \humhub\widgets\ModalDialog::begin([
-            'header' => Yii::t('DrawioModule.base', '<strong>Create</strong> draw.io diagram')
-        ])
+$modal = ModalDialog::begin([
+    'header' => Yii::t('DrawioModule.base', '<strong>Create</strong> draw.io diagram'),
+])
 ?>
 
 <?php $form = ActiveForm::begin(); ?>
@@ -25,4 +25,4 @@ $modal = \humhub\widgets\ModalDialog::begin([
 
 <?php ActiveForm::end(); ?>
 
-<?php \humhub\widgets\ModalDialog::end(); ?>
+<?php ModalDialog::end(); ?>
