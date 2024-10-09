@@ -15,7 +15,6 @@ use humhub\modules\file\libs\FileHelper;
 
 class CreateController extends \humhub\components\Controller
 {
-
     public function actionIndex()
     {
         $ext = 'drawio';
@@ -25,15 +24,15 @@ class CreateController extends \humhub\components\Controller
             $file = $model->save();
             if ($file !== false) {
                 return $this->asJson([
-                            'success' => true,
-                            'file' => FileHelper::getFileInfos($file),
-                            'openUrl' => Url::to(['/drawio/open', 'guid' => $file->guid]),
-                            'openFlag' => (boolean) $model->openFlag
+                    'success' => true,
+                    'file' => FileHelper::getFileInfos($file),
+                    'openUrl' => Url::to(['/drawio/open', 'guid' => $file->guid]),
+                    'openFlag' => (bool) $model->openFlag,
                 ]);
             } else {
                 return $this->asJson([
-                            'success' => false,
-                            'output' => $this->renderAjax('index', ['model' => $model, 'ext' => $ext])
+                    'success' => false,
+                    'output' => $this->renderAjax('index', ['model' => $model, 'ext' => $ext]),
                 ]);
             }
         }

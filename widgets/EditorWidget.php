@@ -22,7 +22,6 @@ use yii\helpers\Url;
  */
 class EditorWidget extends JsWidget
 {
-
     /**
      * @var File the file
      */
@@ -64,7 +63,7 @@ class EditorWidget extends JsWidget
     public function getAttributes()
     {
         return [
-            'style' => 'height:100%;border-radius: 8px 8px 0px 0px;background-color:#F4F4F4'
+            'style' => 'height:100%;border-radius: 8px 8px 0px 0px;background-color:#F4F4F4',
         ];
     }
 
@@ -76,9 +75,9 @@ class EditorWidget extends JsWidget
         $url = Yii::$app->getModule('drawio')->getServerUrl() . '/?embed=1&spin=1&proto=json&stealth=1&splash=0&ui=atlas';
 
         return $this->render('editor', [
-                    'file' => $this->file,
-                    'options' => $this->getOptions(),
-                    'drawioUrl' => $url
+            'file' => $this->file,
+            'options' => $this->getOptions(),
+            'drawioUrl' => $url,
         ]);
     }
 

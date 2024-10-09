@@ -20,7 +20,6 @@ use humhub\modules\file\libs\FileHelper;
  */
 class EditFileHandler extends BaseFileHandler
 {
-
     /**
      * @inheritdoc
      */
@@ -31,7 +30,7 @@ class EditFileHandler extends BaseFileHandler
             'data-action-url' => Url::to(['/drawio/open', 'guid' => $this->file->guid]),
             'data-action-click' => 'ui.modal.load',
             'data-modal-id' => 'drawio-modal',
-            'data-modal-close' => ''
+            'data-modal-close' => '',
         ];
     }
 

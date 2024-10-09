@@ -10,7 +10,6 @@ use Yii;
  */
 class ConfigureForm extends \yii\base\Model
 {
-
     public $serverUrl;
 
     /**
@@ -32,7 +31,7 @@ class ConfigureForm extends \yii\base\Model
             'serverUrl' => Yii::t('DrawioModule.base', 'Hostname'),
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
