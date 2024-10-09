@@ -18,7 +18,6 @@ use yii\helpers\Url;
  */
 class Module extends \humhub\components\Module
 {
-
     public $resourcesPath = 'resources';
 
     /**
@@ -27,7 +26,7 @@ class Module extends \humhub\components\Module
     public function getConfigUrl()
     {
         return Url::to([
-                    '/drawio/admin'
+            '/drawio/admin',
         ]);
     }
 

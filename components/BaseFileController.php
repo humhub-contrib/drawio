@@ -21,7 +21,6 @@ use humhub\components\Controller;
  */
 class BaseFileController extends Controller
 {
-
     /**
      * @var File
      */

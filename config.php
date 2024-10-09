@@ -8,6 +8,5 @@ return [
     'namespace' => 'humhub\modules\drawio',
     'events' => [
         [FileHandlerCollection::className(), FileHandlerCollection::EVENT_INIT, ['humhub\modules\drawio\Events', 'onFileHandlerCollection']],
-    ]
+    ],
 ];
-?>

@@ -14,7 +14,6 @@ use humhub\modules\admin\components\Controller;
 
 class AdminController extends Controller
 {
-
     public function actionIndex()
     {
         $model = new ConfigureForm();

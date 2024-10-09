@@ -20,7 +20,6 @@ use humhub\modules\file\models\File;
  */
 class CreateDocument extends Model
 {
-
     public $fileName;
     public $openFlag = true;
 
@@ -35,7 +34,7 @@ class CreateDocument extends Model
     public function attributeLabels()
     {
         return [
-            'openFlag' => Yii::t('DrawioModule.base', 'Open the new document in the next step')
+            'openFlag' => Yii::t('DrawioModule.base', 'Open the new document in the next step'),
         ];
     }
 
