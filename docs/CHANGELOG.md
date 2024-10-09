@@ -4,6 +4,7 @@ Changelog
 1.0.6 - Unreleased
 ----------------------
 - Enh #18: Update Active Form for Bootstrap 5
+- Enh #19: Use PHP CS Fixer
 
 1.0.5 - April 4, 2024
 ----------------------
