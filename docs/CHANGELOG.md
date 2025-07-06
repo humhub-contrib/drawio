@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0.6 - Unreleased
+1.1.0 (Unreleased)
 ----------------------
 - Enh #18: Update Active Form for Bootstrap 5
 - Enh #19: Use PHP CS Fixer
+- Enh: Migration to Bootstrap 5 for HumHub 1.18
 
 1.0.5 - April 4, 2024
 ----------------------

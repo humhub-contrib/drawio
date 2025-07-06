@@ -1,8 +1,9 @@
 <?php
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
+use humhub\modules\drawio\assets\Assets;
 
-\humhub\modules\drawio\assets\Assets::register($this);
+Assets::register($this);
 ?>
 
 <?= Html::beginTag('div', $options) ?>

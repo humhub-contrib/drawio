@@ -6,4 +6,4 @@ Create charts in the easiest way imaginable. With our draw.io integration it has
 
 - Create, edit and share diagrams with the well renowned tool
 - Increase your productivity by collaboratively designing projects
-- Comment, discuss and show your appreciaten with a like
+- Comment, discuss and show your appreciation with a like
