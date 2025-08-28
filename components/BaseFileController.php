@@ -8,11 +8,10 @@
 
 namespace humhub\modules\drawio\components;
 
+use humhub\components\Controller;
+use humhub\modules\file\models\File;
 use Yii;
 use yii\web\HttpException;
-use yii\helpers\Url;
-use humhub\modules\file\models\File;
-use humhub\components\Controller;
 
 /**
  * Description of BaseFileController

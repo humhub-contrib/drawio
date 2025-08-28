@@ -8,7 +8,7 @@
 
 namespace humhub\modules\drawio\widgets;
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\file\libs\FileHelper;
 use humhub\modules\file\models\File;
 use humhub\widgets\JsWidget;

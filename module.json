@@ -7,9 +7,9 @@
         "diagrams",
         "visualization"
     ],
-    "version": "1.0.6",
+    "version": "1.1.0",
     "humhub": {
-        "minVersion": "1.10"
+        "minVersion": "1.18"
     },
     "homepage": "https://github.com/humhub-contrib/drawio",
     "authors": [
@@ -22,9 +22,9 @@
 
     ],
     "screenshots": [
-        "resources/screen1.PNG", 
-        "resources/screen2.PNG", 
-        "resources/screen3.PNG", 
+        "resources/screen1.PNG",
+        "resources/screen2.PNG",
+        "resources/screen3.PNG",
         "resources/screen4.PNG"
-    ]   
+    ]
 }

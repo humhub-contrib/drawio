@@ -1,22 +1,24 @@
-<div class="modal-dialog animated fadeIn" style="width:96%">
-    <div class="modal-content drawioModal" style="background-color:transparent;">
-        <?=
-        \humhub\modules\drawio\widgets\EditorWidget::widget([
-            'file' => $file,
-        ]);
-        ?>
-    </div>
-</div>
-<script <?= \humhub\libs\Html::nonce() ?>>
-    window.onload = function (evt) {
-        setSize();
-    }
-    window.onresize = function (evt) {
-        setSize();
-    }
-    setSize();
+<?php
 
-    function setSize() {
-        $('.drawioModal').css('height', window.innerHeight - 110 + 'px');
-    }
-</script>
+use humhub\components\View;
+use humhub\modules\drawio\widgets\EditorWidget;
+use humhub\modules\file\models\File;
+use humhub\widgets\modal\Modal;
+
+/**
+ * @var $file File
+ * @var $this View
+ */
+
+// Force modal full height
+$this->registerCss('#drawio-modal .modal-content {height: calc(100vh - 45px);}');
+?>
+
+<?php Modal::beginDialog([
+    'size' => Modal::SIZE_EXTRA_LARGE,
+    'closeButton' => false,
+]) ?>
+    <?= EditorWidget::widget([
+        'file' => $file,
+    ]) ?>
+<?php Modal::endDialog() ?>

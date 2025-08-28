@@ -1,7 +1,8 @@
 <?php
 
-use humhub\modules\ui\form\widgets\ActiveForm;
+use humhub\widgets\form\ActiveForm;
 use yii\helpers\Html;
+
 ?>
 
 <div class="panel panel-default">
@@ -11,11 +12,11 @@ use yii\helpers\Html;
     <div class="panel-body">
 
         <?php $form = ActiveForm::begin(['id' => 'configure-form']); ?>
-        <div class="form-group">
+        <div class="mb-3">
             <?= $form->field($model, 'serverUrl'); ?>
         </div>
 
-        <div class="form-group">
+        <div class="mb-3">
             <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
         </div>
 
