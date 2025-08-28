@@ -17,7 +17,6 @@ use humhub\modules\file\libs\FileHelper;
  */
 class Events
 {
-
     public static function onFileHandlerCollection($event)
     {
         /* @var $collection FileHandlerCollection */
@@ -31,7 +30,7 @@ class Events
         /* @var $module \humhub\modules\drawio\Module */
         $module = Yii::$app->getModule('drawio');
 
-        if ($collection->file === null)  {
+        if ($collection->file === null) {
             return;
         }
 

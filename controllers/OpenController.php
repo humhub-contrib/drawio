@@ -13,11 +13,10 @@ use humhub\modules\drawio\components\BaseFileController;
 
 class OpenController extends BaseFileController
 {
-
     public function actionIndex()
     {
         return $this->renderAjax('index', [
-                    'file' => $this->file,
+            'file' => $this->file,
         ]);
     }
 
@@ -31,7 +30,7 @@ class OpenController extends BaseFileController
         $this->file->save();
 
         return [
-            'ok' => true
+            'ok' => true,
         ];
     }
 
