@@ -3,7 +3,7 @@ Changelog
 
 1.1.1 (Unreleased)
 -----------------------
-- Fix: Missing icon in Context Menu (File handler)
+- Fix #21: Missing icon in Context Menu (File handler)
 
 1.1.0 (August 28, 2025)
 -----------------------
