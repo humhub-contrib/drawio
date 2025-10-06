@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.1 (Unreleased)
+-----------------------
+- Fix: Missing icon in Context Menu (File handler)
+
 1.1.0 (August 28, 2025)
 -----------------------
 - Enh #18: Update Active Form for Bootstrap 5
