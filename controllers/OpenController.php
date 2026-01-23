@@ -26,7 +26,7 @@ class OpenController extends BaseFileController
         $this->forcePostRequest();
         $fileContent = Yii::$app->request->post('content');
         $this->file->store->setContent($fileContent);
-        $this->file->size = strlen($fileContent);
+        $this->file->size = strlen((string) $fileContent);
         $this->file->save();
 
         return [
