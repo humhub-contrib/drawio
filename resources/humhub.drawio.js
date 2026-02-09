@@ -39,15 +39,6 @@ humhub.module('drawio', function (module, require, $) {
     Editor.prototype.initEditor = function () {
         var that = this;
 
-        if (typeof drawioEditorFileGuids === 'undefined') {
-            drawioEditorFileGuids = [];
-        }
-        if (drawioEditorFileGuids.indexOf(that.options.fileGuid) !== -1) {
-            // Don't initialize it twice
-            return;
-        }
-        drawioEditorFileGuids.push(that.options.fileGuid);
-
         $(window).on('message', function (e) {
             if ($('[data-ui-widget="drawio.Editor"]').data('file-guid') !== that.options.fileGuid) {
                 // Skip event from editor of another file

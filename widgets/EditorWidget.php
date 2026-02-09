@@ -48,7 +48,7 @@ class EditorWidget extends JsWidget
             'file-guid' => $this->file->guid,
             'file-name' => Html::encode($this->file->fileName),
             'file-extension' => Html::encode(strtolower(FileHelper::getExtension($this->file))),
-            'file-content' => file_get_contents($this->file->store->get()),
+            'file-content' => file_get_contents($this->file->store->get()) ?: null,
             'file-save-url' => Url::to(['/drawio/open/update', 'guid' => $this->file->guid]),
             'user-guid' => ($user) ? Html::encode($user->guid) : '',
             'user-first-name' => ($user) ? Html::encode($user->profile->firstname) : 'Anonymous',

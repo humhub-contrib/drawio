@@ -4,6 +4,7 @@ Changelog
 1.1.1 (Unreleased)
 -----------------------
 - Fix #21: Missing icon in Context Menu (File handler)
+- Fix #24: Fix creating a new file and loading a saved file
 
 1.1.0 (August 28, 2025)
 -----------------------
