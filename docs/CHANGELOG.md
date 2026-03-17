@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (Unreleased)
+-------------------------
+- Fix #26: Update Bootstrap buttons and links
+
 1.1.1 (February 10, 2026)
 -------------------------
 - Fix #21: Missing icon in Context Menu (File handler)

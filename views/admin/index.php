@@ -1,25 +1,17 @@
 <?php
 
+use humhub\modules\drawio\models\ConfigureForm;
+use humhub\widgets\bootstrap\Button;
 use humhub\widgets\form\ActiveForm;
-use yii\helpers\Html;
 
+/* @var ConfigureForm $model */
 ?>
-
 <div class="panel panel-default">
-
-    <div class="panel-heading"><?= Yii::t('DrawioModule.base', '<strong>Draw.io </strong> module configuration'); ?></div>
-
+    <div class="panel-heading"><?= Yii::t('DrawioModule.base', '<strong>Draw.io </strong> module configuration') ?></div>
     <div class="panel-body">
-
-        <?php $form = ActiveForm::begin(['id' => 'configure-form']); ?>
-        <div class="mb-3">
-            <?= $form->field($model, 'serverUrl'); ?>
-        </div>
-
-        <div class="mb-3">
-            <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
-        </div>
-
-        <?php ActiveForm::end(); ?>
+        <?php $form = ActiveForm::begin(['id' => 'configure-form']) ?>
+            <?= $form->field($model, 'serverUrl') ?>
+            <?= Button::save()->submit() ?>
+        <?php ActiveForm::end() ?>
     </div>
 </div>
