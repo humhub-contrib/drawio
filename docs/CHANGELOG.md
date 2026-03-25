@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0 (Unreleased)
+-------------------------
+- Enh #27: Update for HumHub 1.19
+
 1.1.2 (Unreleased)
 -------------------------
 - Fix #26: Update Bootstrap buttons and links
