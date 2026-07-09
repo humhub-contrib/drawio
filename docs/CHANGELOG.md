@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0 (June 5, 2026)
+--------------------
+- Enh #27: Update for HumHub 1.19
+
 1.1.2 (July 8, 2026)
 --------------------
 - Fix #26: Update Bootstrap buttons and links
