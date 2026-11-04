@@ -3,12 +3,13 @@
 namespace humhub\modules\drawio\models;
 
 use Yii;
+use yii\base\Model;
 
 /**
  * ConfigureForm defines the configurable fields.
 
  */
-class ConfigureForm extends \yii\base\Model
+class ConfigureForm extends Model
 {
     public $serverUrl;
 
@@ -18,7 +19,9 @@ class ConfigureForm extends \yii\base\Model
     public function rules()
     {
         return [
-            ['serverUrl', 'string'],
+            ['serverUrl', 'trim'],
+            ['serverUrl', 'filter', 'filter' => static fn($value) => rtrim((string) $value, '/')],
+            ['serverUrl', 'url', 'validSchemes' => ['http', 'https']],
         ];
     }
 
@@ -38,7 +41,8 @@ class ConfigureForm extends \yii\base\Model
     public function attributeHints()
     {
         return [
-            'serverUrl' => Yii::t('DrawioModule.base', 'e.g. :drawioDefaultServerUrl', [':drawioDefaultServerUrl' => 'https://embed.diagrams.net']),
+            'serverUrl' => Yii::t('DrawioModule.base', 'Diagram content is processed by this server. Use your own draw.io server to keep the data in-house.')
+                . ' ' . Yii::t('DrawioModule.base', 'e.g. :drawioDefaultServerUrl', [':drawioDefaultServerUrl' => 'https://embed.diagrams.net']),
         ];
     }
 
@@ -49,8 +53,12 @@ class ConfigureForm extends \yii\base\Model
         return true;
     }
 
-    public function save()
+    public function save(): bool
     {
+        if (!$this->validate()) {
+            return false;
+        }
+
         Yii::$app->getModule('drawio')->settings->set('serverUrl', $this->serverUrl);
 
         return true;

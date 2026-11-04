@@ -24,13 +24,12 @@ class OpenController extends BaseFileController
     {
         Yii::$app->response->format = 'json';
         $this->forcePostRequest();
-        $fileContent = Yii::$app->request->post('content');
+        $fileContent = (string) Yii::$app->request->post('content');
         $this->file->store->setContent($fileContent);
-        $this->file->size = strlen((string) $fileContent);
-        $this->file->save();
+        $this->file->size = strlen($fileContent);
 
         return [
-            'ok' => true,
+            'ok' => $this->file->save(),
         ];
     }
 

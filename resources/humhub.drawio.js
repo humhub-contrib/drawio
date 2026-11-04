@@ -22,6 +22,7 @@ humhub.module('drawio', function (module, require, $) {
         this.modal = modal.get('#drawio-modal');
         var that = this;
         this.modal.$.on('hidden.bs.modal', function (evt) {
+            $(window).off(that.messageEvent);
             that.modal.clear();
         });
     };
@@ -39,16 +40,33 @@ humhub.module('drawio', function (module, require, $) {
     Editor.prototype.initEditor = function () {
         var that = this;
 
-        $(window).on('message', function (e) {
-            if ($('[data-ui-widget="drawio.Editor"]').data('file-guid') !== that.options.fileGuid) {
-                // Skip event from editor of another file
+        // Unique event name per widget instance, so the handler can be removed on close
+        this.messageEvent = 'message.drawio' + this.$.attr('id');
+        $(window).off('message.drawio').off(this.messageEvent);
+
+        $(window).on(this.messageEvent, function (e) {
+            var frame = $('#drawIOFrame')[0];
+            var originalEvent = e.originalEvent;
+
+            // Accept messages only from our own draw.io iframe
+            if (!frame || !originalEvent || originalEvent.source !== frame.contentWindow) {
                 return;
             }
 
-            var editWindow = $('#drawIOFrame')[0].contentWindow;
-            var data = JSON.parse(e.originalEvent.data);
+            var editWindow = frame.contentWindow;
+            var data;
+            try {
+                data = JSON.parse(originalEvent.data);
+            } catch (err) {
+                return;
+            }
+
+            if (!data || typeof data !== 'object') {
+                return;
+            }
+
             if (data.event === 'init') {
-                if (that.options.fileContent != '') {
+                if (typeof that.options.fileContent === 'string' && that.options.fileContent !== '') {
                     editWindow.postMessage(JSON.stringify({
                         action: "load",
                         xml: that.options.fileContent
@@ -67,6 +85,8 @@ humhub.module('drawio', function (module, require, $) {
                     type: 'POST',
                     data: {'content': data.xml},
                     dataType: 'json',
+                }).fail(function () {
+                    module.log.error('Could not save the diagram', true);
                 });
             } else if (data.event === 'exit') {
                 that.close();

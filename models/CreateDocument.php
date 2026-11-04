@@ -8,10 +8,9 @@
 
 namespace humhub\modules\drawio\models;
 
+use humhub\modules\file\models\File;
 use Yii;
 use yii\base\Model;
-use humhub\modules\drawio\Module;
-use humhub\modules\file\models\File;
 
 /**
  * Description of CreateDocument
@@ -27,6 +26,9 @@ class CreateDocument extends Model
     {
         return [
             ['fileName', 'required'],
+            ['fileName', 'trim'],
+            ['fileName', 'string', 'max' => 240],
+            ['fileName', 'match', 'pattern' => '#^[^/\\\\]+$#'],
             ['openFlag', 'boolean'],
         ];
     }
@@ -38,21 +40,31 @@ class CreateDocument extends Model
         ];
     }
 
-    public function save()
+    /**
+     * Creates a new empty draw.io file.
+     *
+     * @return File|null the created file or null on validation/save error
+     */
+    public function createFile(): ?File
     {
-
-        if ($this->validate()) {
-            $file = new File();
-            $file->file_name = $this->fileName . '.drawio';
-            $file->size = 0;
-            $file->mime_type = 'application/xml';
-            $file->save();
-            $file->store->setContent('');
-
-            return $file;
+        if (!$this->validate()) {
+            return null;
         }
 
-        return false;
+        $file = new File();
+        $file->file_name = $this->fileName . '.drawio';
+        $file->size = 0;
+        $file->mime_type = 'application/xml';
+
+        if (!$file->save()) {
+            $this->addError('fileName', Yii::t('DrawioModule.base', 'Could not create the file!'));
+
+            return null;
+        }
+
+        $file->store->setContent('');
+
+        return $file;
     }
 
 }

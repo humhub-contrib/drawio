@@ -9,6 +9,7 @@
 namespace humhub\modules\drawio\components;
 
 use humhub\components\Controller;
+use humhub\modules\file\libs\FileHelper;
 use humhub\modules\file\models\File;
 use Yii;
 use yii\web\HttpException;
@@ -36,7 +37,9 @@ class BaseFileController extends Controller
             throw new HttpException(404, Yii::t('DrawioModule.base', 'Could not find requested file!'));
         }
 
-        //TODO: Check extension
+        if (!in_array(strtolower((string) FileHelper::getExtension($this->file)), Yii::$app->getModule('drawio')->getExtensions(), true)) {
+            throw new HttpException(400, Yii::t('DrawioModule.base', 'Invalid file type!'));
+        }
 
         if (!$this->file->canDelete()) {
             throw new HttpException(403, Yii::t('DrawioModule.base', 'File write access denied!'));
