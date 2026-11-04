@@ -8,7 +8,6 @@
 
 namespace humhub\modules\drawio\widgets;
 
-use humhub\helpers\Html;
 use humhub\modules\file\libs\FileHelper;
 use humhub\modules\file\models\File;
 use humhub\widgets\JsWidget;
@@ -46,14 +45,14 @@ class EditorWidget extends JsWidget
 
         return [
             'file-guid' => $this->file->guid,
-            'file-name' => Html::encode($this->file->file_name),
-            'file-extension' => Html::encode(strtolower(FileHelper::getExtension($this->file))),
+            'file-name' => $this->file->file_name,
+            'file-extension' => strtolower(FileHelper::getExtension($this->file)),
             'file-content' => $this->file->store->getContent() ?: null,
             'file-save-url' => Url::to(['/drawio/open/update', 'guid' => $this->file->guid]),
-            'user-guid' => ($user) ? Html::encode($user->guid) : '',
-            'user-first-name' => ($user) ? Html::encode($user->profile->firstname) : 'Anonymous',
-            'user-last-name' => ($user) ? Html::encode($user->profile->lastname) : 'User',
-            'user-language' => ($user) ? $user->language : 'en',
+            'user-guid' => $user ? $user->guid : '',
+            'user-first-name' => $user ? $user->profile->firstname : 'Anonymous',
+            'user-last-name' => $user ? $user->profile->lastname : 'User',
+            'user-language' => $user ? $user->language : 'en',
         ];
     }
 

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.1 (Unreleased)
+------------------
+- Fix #29: Editor message handling, new file templates, file type check and settings validation
+
 1.2.0 (June 5, 2026)
 --------------------
 - Enh #27: Update for HumHub 1.19

@@ -21,8 +21,8 @@ class CreateController extends \humhub\components\Controller
 
         $model = new \humhub\modules\drawio\models\CreateDocument();
         if ($model->load(Yii::$app->request->post())) {
-            $file = $model->save();
-            if ($file !== false) {
+            $file = $model->createFile();
+            if ($file !== null) {
                 return $this->asJson([
                     'success' => true,
                     'file' => FileHelper::getFileInfos($file),
