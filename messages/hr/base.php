@@ -9,5 +9,8 @@ return [
     'File write access denied!' => 'Pristup za pisanje zapisa odbijen!',
     'Hostname' => 'Hostaname',
     'Open the new document in the next step' => 'Otvorite novi dokument u sljedećem koraku',
+    'Could not create the file!' => '',
+    'Diagram content is processed by this server. Use your own draw.io server to keep the data in-house.' => '',
+    'Invalid file type!' => '',
     'e.g. :drawioDefaultServerUrl' => '',
 ];

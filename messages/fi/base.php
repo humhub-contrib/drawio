@@ -9,5 +9,8 @@ return [
     'File write access denied!' => 'Tiedoston muokkaus estetty',
     'Hostname' => 'Isäntänimi',
     'Open the new document in the next step' => 'Avaa tiedosto heti',
+    'Could not create the file!' => '',
+    'Diagram content is processed by this server. Use your own draw.io server to keep the data in-house.' => '',
+    'Invalid file type!' => '',
     'e.g. :drawioDefaultServerUrl' => '',
 ];
